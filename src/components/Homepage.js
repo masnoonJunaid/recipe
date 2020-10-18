@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import escapeRegExp from 'escape-string-regexp'
 
 
 class Homepage extends React.Component{
@@ -21,9 +22,25 @@ class Homepage extends React.Component{
       })
   }
 
+  updateQuery = (query) => {
+    this.setState({query: query.trim()})
+  }
 
 
-  render(){  
+
+  render(){
+
+    let showingRecipe;
+    let {items, query} = this.state; //JavaScript destructing method
+
+    if(query) {
+      const match = new RegExp(escapeRegExp(query), 'i')
+      showingRecipe = items.filter((recipe) => match.test(recipe.name))
+    } else{
+      showingRecipe =  items
+    }
+
+
     return (
       <HomeStyle>
         <div className="search-bar">
@@ -32,12 +49,12 @@ class Homepage extends React.Component{
             className="search-input"
             type="tex"
             placeholder="Search"
-            onChange={{}}
+            onChange={event => {this.updateQuery(event.target.value)}}
           />
         </div>
         <div>
           <ul className="ul-list">
-            {this.state.items.map(recipe => (
+            {showingRecipe.map(recipe => (
               <li className="recipe-card">
                 <img
                 className="recipe-img"
