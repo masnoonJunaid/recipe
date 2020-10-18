@@ -43,6 +43,7 @@ padding:0;
 
 .detail-img{
   width:75%;
+  border:solid lightgrey;
   border-radius:10px;
   height:60vh;
 
