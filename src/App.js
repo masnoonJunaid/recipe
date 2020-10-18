@@ -1,11 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch } from 'react-router-dom'
 import './App.css';
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <div >
-      <h1>Hello from Recipe</h1>
+      <Switch>
+        <Route exact path="/" component={Navbar}>
+        </Route>
+      </Switch>
     </div>
   );
 }
