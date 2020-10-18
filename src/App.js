@@ -3,20 +3,23 @@ import { Route, Switch } from 'react-router-dom'
 import './App.css';
 import Navbar from './components/Navbar'
 import Homepage from './components/Homepage'
+import Footer from './components/Footer'
+import RecipeDetails from './components/RecipeDetails'
 
 function App() {
   return (
-    <div >
+    <React.Fragment>
+      <Navbar/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <Switch>
-        <Route exact path="/" component={Navbar}>
-        </Route>
+        <Route exact path = "/" component={Homepage}/>
       </Switch>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <Homepage/>
-    </div>
+      <Route path="/details" component={RecipeDetails}/>
+      <Footer/>
+    </React.Fragment>
   );
 }
 
