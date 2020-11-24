@@ -47,7 +47,7 @@ class Homepage extends React.Component{
           <img className="search-icon" alt="" src='./icons/search.svg'/>
           <input
             className="search-input"
-            type="tex"
+            type="text"
             placeholder="Search"
             onChange={event => {this.updateQuery(event.target.value)}}
           />
@@ -81,7 +81,7 @@ class Homepage extends React.Component{
 }
 
 
-const HomeStyle = styled.div`
+export const HomeStyle = styled.div`
   .search-bar {
     margin-left:auto;
     margin-right:auto;

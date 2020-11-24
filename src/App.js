@@ -16,8 +16,8 @@ function App() {
       <br/>
       <Switch>
         <Route exact path = "/" component={Homepage}/>
+        <Route path="/details" component={RecipeDetails}/>
       </Switch>
-      <Route path="/details" component={RecipeDetails}/>
       <Footer/>
     </React.Fragment>
   );
