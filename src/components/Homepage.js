@@ -48,7 +48,7 @@ class Homepage extends React.Component{
           <input
             className="search-input"
             type="text"
-            placeholder="Search"
+            placeholder="Search Top Recipe"
             onChange={event => {this.updateQuery(event.target.value)}}
           />
         </div>
@@ -98,6 +98,10 @@ export const HomeStyle = styled.div`
   .search-input {
     width:80%;
     border:solid lightgrey;
+    text-align:center;
+    font-family: 'Castoro', serif;
+    line-height:3rem;
+    font-size:25px;
   }
 
   .ul-list{
@@ -105,25 +109,30 @@ export const HomeStyle = styled.div`
     height:100%;
     display:flex;
     flex-wrap:wrap;
-    margin-left:auto;
-    margin-rigt:auto;
+    margin-left:10%;
+    margin-right:auto;
     list-style-type:none;
   }
 
   .recipe-card{
-    width:25%;
-    height:65vh;
+    width:20%;
+    height:50vh;
     border:solid lightgrey;
     border-radius: 4%;
-    margin:2%;
+    margin:3%;
   }
 
-  .recipe-img{
+.recipe-img{
     width:100%;
     height:60%;
     border-radius:10px;
   }
 
+
+.recipe-img:hover{
+  transform:scale(1.02);
+  transition:all 0.5s ease-in-out;
+}
   .int-icons{
     width:10%;
     margin:7%;

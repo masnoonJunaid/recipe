@@ -1,11 +1,11 @@
-import React { Component } from 'react';
+import React from 'react';
 {/*creating context api , a sofware architecture that make sure
   data is flowing top to bottom components, handling all the operation with data
   in this structure at a single place , and then passing methods as props to other
   components;
 */}
 const RecipeContext = React.createContext();
-class RecipeProvider extends Component {
+class RecipeProvider extends React.Component {
   state = {
     recipe:[];
   };
