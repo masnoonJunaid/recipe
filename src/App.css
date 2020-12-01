@@ -21,3 +21,11 @@
   font-family: 'Roboto', sans-serif;
 
 }
+
+.recipe-card{
+  width:20%;
+  height:50vh;
+  border:solid lightgrey;
+  border-radius: 4%;
+  margin:3%;
+}
