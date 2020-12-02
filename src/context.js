@@ -27,24 +27,16 @@ class RecipeProvider extends React.Component {
 
   updateQuery = (query) => {
     this.setState({query:query.trim()})
+    console.log(this.state.query)
   }
 
   render() {
-    let showingRecipe;
-    let {items, query} = this.state;
-
-    if(query) {
-      const match = new RegExp(escapeRegExp(query), 'i')
-      showingRecipe = items.filter((recipe) => match.test(recipe.name))
-    } else {
-      showingRecipe = items;
-    }
+  
     return (
       <RecipeContext.Provider value={{
           ...this.state,
           updateQuery:this.updateQuery,
-          showingRecipe:showingRecipe,
-          isLoaded:this.isLoaded
+          isLoaded:this.isLoaded,
       }}
       >
         {this.props.children}
