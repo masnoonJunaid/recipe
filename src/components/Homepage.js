@@ -36,9 +36,8 @@ class Homepage extends React.Component{
                 }}
               </RecipeConsumer>
         </div>
-        <div>
-          <ul className="ul-list">
-              <RecipeConsumer>
+        <div className="ul-list">
+              <RecipeConsumer >
               {/*
                 Here How the combination of query search and filters work to render result
                 based on input in above format
@@ -59,11 +58,13 @@ class Homepage extends React.Component{
                       showingRecipe = value.recipe;
                     }
                   return showingRecipe.map(recipe=>{
-                  return <Recipecard key = {recipe.id} recipe = {recipe}/>
+                  return <Recipecard
+                    key = {recipe.id}
+                    recipe = {recipe}
+                    />
                   })
                 }}
               </RecipeConsumer>
-          </ul>
         </div>
       </HomeStyle>
     )
@@ -104,10 +105,17 @@ export const HomeStyle = styled.div`
     height:100%;
     display:flex;
     flex-wrap:wrap;
-    margin-left:10%;
+    margin-left:auto;
     margin-right:auto;
     list-style-type:none;
   }
+
+  .ul-div{
+    margin-left:;
+    margin-right:auto;
+    text-align:center;
+  }
+
 
 `
 

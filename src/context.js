@@ -9,7 +9,6 @@ const RecipeContext = React.createContext();
 class RecipeProvider extends React.Component {
   state = {
     recipe : [],
-    items:[],
     isLoaded:false,
     query:'',
   };
@@ -30,8 +29,12 @@ class RecipeProvider extends React.Component {
     console.log(this.state.query)
   }
 
+
+
+
+
   render() {
-  
+
     return (
       <RecipeContext.Provider value={{
           ...this.state,

@@ -29,13 +29,6 @@ class Recipecard extends React.Component {
 
 const CardStyle = styled.li`
 
-.recipe-card{
-  width:20%;
-  height:50vh;
-  border:solid lightgrey;
-  border-radius: 4%;
-  margin:3%;
-}
 
 .recipe-img{
     width:100%;
