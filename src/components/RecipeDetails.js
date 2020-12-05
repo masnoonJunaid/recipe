@@ -1,24 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
+import {RecipeConsumer } from '../context'
 
 
 class RecipeDetails extends React.Component {
   render(){
     return (
-      <RecipeStyles>
-        <div className="detail-container">
-          <div className="div-details">
-            <img className="detail-img" alt="" src="../icons/sample.jpg"/>
-          </div>
-          <div className="div-details">
-            <p className="recipe-detail"><b>Name : </b> Vadonut</p>
-            <p className="recipe-detail"><b>Price : </b> 1.99</p>
-            <p className="recipe-detail"><b>Category : </b> appetizer</p>
-            <p className="recipe-detail"><b>Description : </b> A quintessential ConFusion experience, is it a vada or is it a donut?</p>
-            <button className="buy-button">Buy Now</button>
-          </div>
-        </div>
-      </RecipeStyles>
+      <RecipeConsumer>
+        {value=>{
+      const  {id, name, image, category,label,price,description} = value.recipeDetails
+          return(
+            <RecipeStyles>
+              <div className="detail-container">
+                <div className="div-details">
+                  <img className="detail-img" alt="" src={image}/>
+                </div>
+                <div className="div-details">
+                  <p className="recipe-detail"><b>Name : </b> {name}</p>
+                  <p className="recipe-detail"><b>Price : </b> {price}</p>
+                  <p className="recipe-detail"><b>Category : </b> {category}</p>
+                  <p className="recipe-detail"><b>Description : </b> {description}</p>
+                  <button className="buy-button">Buy Now</button>
+                </div>
+              </div>
+            </RecipeStyles>
+          )
+        }}
+    </RecipeConsumer>
     )
   }
 }

@@ -1,28 +1,42 @@
 import React from 'react'
 import styled from 'styled-components'
+import {RecipeConsumer} from '../context'
+import {Link} from  'react-router-dom'
 import "../App.css"
 
 class Recipecard extends React.Component {
   render(){
-    const {name, price, image} = this.props.recipe;
+
     return (
-      <CardStyle className="recipe-card">
-          <img
-          className="recipe-img"
-           alt=""
-           src={image}
-            />
-          <div className="img-prop">
-            <p className="prop-line"><b>Name : </b> {name}</p>
-            <p className="prop-line"><b>Price : </b> {price}</p>
-          </div>
-          <div className="icon-div">
-            <img className="int-icons" alt="" src="../icons/comment.svg"/>
-            <img className="int-icons" alt="" src="../icons/save.svg"/>
-            <img className="int-icons" alt="" src="../icons/share.svg"/>
-            <img className="int-icons" alt="" src="../icons/buy.svg"/>
-          </div>
-        </CardStyle>
+      <RecipeConsumer>
+        {value => {
+          const {id,name, price, image} = this.props.recipe;
+          return (
+
+            <CardStyle className="recipe-card">
+              <Link to="details">
+                <img
+                  className="recipe-img"
+                  alt=""
+                  src={image}
+                  onClick={() =>{
+                    value.handleRecipe(id)
+                  }}
+                  />
+              </Link>
+              <div className="img-prop">
+                <p className="prop-line"><b>Name : </b> {name}</p>
+                <p className="prop-line"><b>Price : </b> {price}</p>
+              </div>
+              <div className="icon-div">
+                <img className="int-icons" alt="" src="../icons/comment.svg"/>
+                <img className="int-icons" alt="" src="../icons/share.svg"/>
+                <img className="int-icons" alt="" src="../icons/buy.svg"/>
+              </div>
+            </CardStyle>
+          )
+        }}
+      </RecipeConsumer>
     )
   }
 }
