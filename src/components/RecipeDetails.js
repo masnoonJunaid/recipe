@@ -11,8 +11,9 @@ class RecipeDetails extends React.Component {
       const  {id, name, image, category,label,price,description} = value.recipeDetails
           return(
             <RecipeStyles>
-              <div className="detail-container">
-                <div className="div-details">
+              <div className="details-checkout">
+              <article className="detail-article display-flex">
+                <div className="div-img div-details">
                   <img className="detail-img" alt="" src={image}/>
                 </div>
                 <div className="div-details">
@@ -20,9 +21,31 @@ class RecipeDetails extends React.Component {
                   <p className="recipe-detail"><b>Price : </b> {price}</p>
                   <p className="recipe-detail"><b>Category : </b> {category}</p>
                   <p className="recipe-detail"><b>Description : </b> {description}</p>
-                  <button className="buy-button">Buy Now</button>
                 </div>
-              </div>
+              </article>
+              <form className="form">
+                <h3>Checkout</h3>
+                <label for="name">Name On Card</label>
+                <br/>
+                <input id="name" type="text" name="name" placeholder="Name on card" required autoComplete="Name"/>
+                <br/>
+                <label for="card_number">Enter Card Number</label>
+                <br/>
+                <input id="card_number"label="Card Number" type="text" name="card_number" required autoComplete="card_number"/>
+                <br/>
+                <div className="display-flex">
+                  <label for="expiration_date" type="text" name="exp_date">Expiration Date</label>
+                  <br/>
+                  <input id="expiration_date" type="text" name="expiration_date" placeholder="VALID THRU"/>
+                  <br/>
+                  <label for="cvv">CVV</label>
+                  <br/>
+                  <input id="cvv" type="cvv" required autoComplete="CVV"/>
+                </div>
+                <p><b>{price}$</b></p>
+                <input className="buy-button" type="submit"value="Place Order"/>
+              </form>
+            </div>
             </RecipeStyles>
           )
         }}
@@ -37,20 +60,34 @@ margin:0;
 padding:0;
 }
 
-.detail-container{
+.details-checkout{
   width:100%;
-  display:flex;
-  flex-wrap:wrap;
+}
+.form{
+  width:25%;
   float:left;
-  margin:2%;
+  display:
 }
 
-.div-details{
- margin-left:
+.detail-article{
+  width:75%;
+  float:left;
 }
+
+div-details{
+  display:flex;
+  float:left;
+}
+
+.div-img{
+  width:100%;
+}
+
+
+
 
 .detail-img{
-  width:75%;
+  width:60%;
   border:solid lightgrey;
   border-radius:10px;
   height:60vh;
@@ -58,7 +95,7 @@ padding:0;
 }
 .recipe-detail{
   font-family:'Roboto', sans-serif;
-  margin:3%;
+  margin:1%;
 }
 
 .detail-img:hover {
@@ -68,9 +105,9 @@ padding:0;
 
 .buy-button{
   background-color:brown;
-  width:30%;
+  width:40%;
   height:6vh;
-  margin-top:8%;
+  margin-top:6%;
 }
 `
 

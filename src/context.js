@@ -31,10 +31,10 @@ class RecipeProvider extends React.Component {
   }
 
 /*
-//  1.getDetails method take parameter id and and find the recipe
-//  with same id, and return all its data as item
-//  2. The method handleRecipe called on onClick method on listed recipe image
-//  and return its all properties aligned to it in recipeDetails object and update state
+  1.getDetails method take parameter id and and find the recipe
+  with same id, and return all its data as item
+  2. The method handleRecipe called on onClick method on listed recipe image
+  and return its all properties aligned to it in recipeDetails object and update state
   */
 
 
