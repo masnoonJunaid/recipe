@@ -1,10 +1,12 @@
 Freecharge Sample assessment at hackerearth.com
 
 This is the  assessment project for Freecharge's UI Developer hiring chaallenge at https://hackerearth.com. Project required concept of Controlled Component  dynamically render search result based on user input of different categories.
-1.JSON Data fetched from provided address in context.js component, which is an code architecture for state management. Recipe Application display recipe,
-2. onClick()  event displays details of the recipe and navigate url to localhost/details where User can Buy Recipe
-3. Search form use a npm package with command `npm i escape-string-regexp` after matching text pattern Homepage(localhost:300) shows filtered result based on recipe name(could be changed to price, or country of origin or any related data.)
-or
+
+## Top feature
+* JSON Data fetched from provided address in context.js component, which is a code architecture for state management.
+*  onClick()  event displays details of the recipe and navigate url to localhost/details where User can Buy items.
+* Search form use a npm package with command `npm i escape-string-regexp`
+* after matching text pattern according to input in form Homepage (localhost:300) shows filtered result based on recipe name(could be changed to price, or country of origin or any related data.)
 ### Run this with localhost
 
 * install all project dependencies with `npm install`
