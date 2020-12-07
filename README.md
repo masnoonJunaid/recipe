@@ -1,6 +1,9 @@
-Freecharge Sample assessment
+Freecharge Sample assessment at hackerearth.com
 
 This is the  assessment project for Freecharge's UI Developer hiring chaallenge at https://hackerearth.com. Project required concept of Controlled Component  dynamically render search result based on user input of different categories.
+1.JSON Data fetched from provided address in context.js component, which is an code architecture for state management. Recipe Application display recipe,
+2. onClick()  event displays details of the recipe and navigate url to localhost/details where User can Buy Recipe
+3. Search form use a npm package with command `npm i escape-string-regexp` after matching text pattern Homepage(localhost:300) shows filtered result based on recipe name(could be changed to price, or country of origin or any related data.)
 or
 ### Run this with localhost
 
@@ -13,16 +16,25 @@ or
 ├── README.md - This file.
 ├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
 ├── public
-│   |── index.html # DO NOT MODIFY
-   ├── icons # Helpful images for your app. Use at your discretion.
+│   |── index.html
+   ├── icons # Helpful images for  app.
    │   ├── buy.svg
    │   ├── comment.svg
    │   ├── fb.svg
    │   ├── insta.svg
    │   ├── linkedin.svg
-   │   ├── searchsvg
+   │   ├── profile.svg
+   │   ├── sample.jpg
+   │   ├── save.svg
+   │   ├── search0.svg
    │   ├── share.svg
-   │  
+   ├── favicon.ico
+   ├── index.html
+   ├── logo192.png
+   ├── logo512.png
+   ├── manifest.json
+   ├── recipelogo.png
+   ├── robots.txt  
 
 └── src
      ├── components
@@ -30,15 +42,14 @@ or
         ├── HomePage.js # Default and interactive UI
         ├── Navbar.js # Top Component of application
         ├── Payment.js # planned payment component
+        ├── Recipecard.js #Each recipe in display
         ├── RecipeDetails.js # component to display on clicking to recipe card
    ├── App.css # Styles for your app. Feel free to customize this as you desire.
    ├── App.js # This is the root of your app. Contains static HTML right now.
    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-   ├── HomePage.js # A react component which render the initial state of application
-
+   ├── context.js # This is the file where state management being handled;
    ├── index.css # Global styles.
    └── index.js #  It is used for DOM rendering only.
-
 ```
 
 
