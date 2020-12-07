@@ -27,21 +27,22 @@ class RecipeDetails extends React.Component {
                 <h3>Checkout</h3>
                 <label for="name">Name On Card</label>
                 <br/>
-                <input id="name" type="text" name="name" placeholder="Name on card" required autoComplete="Name"/>
+                <input className="up-form" id="name" type="text" name="cardname" placeholder="Crime Master Gogo" required autoComplete="Name"/>
                 <br/>
                 <label for="card_number">Enter Card Number</label>
                 <br/>
-                <input id="card_number"label="Card Number" type="text" name="card_number" required autoComplete="card_number"/>
+                <input className="up-form" id="card_number"label="Card Number"max="16" type="text" name="cardnumber" placeholder="1111-2222-3333-4444" required autoComplete="card_number"/>
                 <br/>
                 <div className="display-flex">
                   <label for="expiration_date" type="text" name="exp_date">Expiration Date</label>
                   <br/>
-                  <input id="expiration_date" type="text" name="expiration_date" placeholder="VALID THRU"/>
+                  <input className="b-form" id="expiration_date" type="text" name="expmonth" placeholder="07/24"/>
                   <br/>
                   <label for="cvv">CVV</label>
                   <br/>
-                  <input id="cvv" type="cvv" required autoComplete="CVV"/>
+                  <input className="b-form" id="cvv" type="cvv"name="cvv" placeholder="171" required autoComplete="CVV"/>
                 </div>
+                <br/>
                 <p><b>{price}$</b></p>
                 <input className="buy-button" type="submit"value="Place Order"/>
               </form>
@@ -109,6 +110,25 @@ div-details{
   height:6vh;
   margin-top:6%;
 }
+
+.up-form{
+  height:5vh;
+  width:20vw;
+  margin:2%;
+  border:solid brown;
+  text-align:center;
+  border-radius:4px;
+}
+
+.b-form{
+  height:5vh;
+  width:4vw;
+  margin:2%;
+  border:solid brown;
+  text-align:center;
+  border-radius:4px;
+}
+
 `
 
 export default RecipeDetails
