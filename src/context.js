@@ -1,5 +1,4 @@
 import React from 'react';
-import escapeRegExp from 'escape-string-regexp'
 {/*creating context api , a sofware architecture that make sure
   data is flowing top to bottom components, handling all the operation with data
   in this structure at a single place , and then passing methods as props to other
